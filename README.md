@@ -174,4 +174,24 @@ dp[0] = 1;
 dp[1] = 1;
 和递归dp[i] = dp[i - 1] + dp[i - 2];
 
+2025-4-16
+给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+
+给你一个二叉树的根节点 root ， 检查它是否轴对称。
+
+两题本质一样，可以选择递归或者迭代，
+是很基础的题目，思想很重要
+   if (p == NULL && q == NULL) {
+        return true;
+    } else if (p == NULL || q == NULL) {
+        return false;
+    } else if (p->val != q->val) {
+        return false;
+    } else {
+        return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
+    }
+
+ 
+
  
